@@ -365,6 +365,7 @@ MonoBehaviour:
   isTriggered: 0
   _isDragging: 0
   _triggerPosition: {x: 0, y: 0}
+  _gearPlace: {fileID: 0}
 --- !u!61 &106882788
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -525,6 +526,7 @@ MonoBehaviour:
   isTriggered: 0
   _isDragging: 0
   _triggerPosition: {x: 0, y: 0}
+  _gearPlace: {fileID: 0}
 --- !u!61 &140764073
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1140,6 +1142,7 @@ MonoBehaviour:
   isTriggered: 0
   _isDragging: 0
   _triggerPosition: {x: 0, y: 0}
+  _gearPlace: {fileID: 0}
 --- !u!61 &521172622
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1211,6 +1214,7 @@ GameObject:
   - component: {fileID: 661975449}
   - component: {fileID: 661975448}
   - component: {fileID: 661975447}
+  - component: {fileID: 661975446}
   m_Layer: 0
   m_Name: Lugar de Engrenagem1
   m_TagString: GearPlace
@@ -1218,6 +1222,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &661975446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661975445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0343eb9486894049b449389cda57b11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasGear: 0
 --- !u!58 &661975447
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1553,6 +1570,7 @@ MonoBehaviour:
   isTriggered: 0
   _isDragging: 0
   _triggerPosition: {x: 0, y: 0}
+  _gearPlace: {fileID: 0}
 --- !u!61 &936464661
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2203,6 +2221,7 @@ GameObject:
   - component: {fileID: 1491311794}
   - component: {fileID: 1491311797}
   - component: {fileID: 1491311796}
+  - component: {fileID: 1491311795}
   m_Layer: 0
   m_Name: Lugar de Engrenagem2
   m_TagString: GearPlace
@@ -2224,6 +2243,19 @@ Transform:
   m_Father: {fileID: 504749739}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1491311795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491311793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0343eb9486894049b449389cda57b11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasGear: 0
 --- !u!58 &1491311796
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2301,6 +2333,7 @@ GameObject:
   - component: {fileID: 1506155600}
   - component: {fileID: 1506155603}
   - component: {fileID: 1506155602}
+  - component: {fileID: 1506155601}
   m_Layer: 0
   m_Name: Lugar de Engrenagem5
   m_TagString: GearPlace
@@ -2322,6 +2355,19 @@ Transform:
   m_Father: {fileID: 504749739}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1506155601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506155599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0343eb9486894049b449389cda57b11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasGear: 0
 --- !u!58 &1506155602
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2480,6 +2526,7 @@ GameObject:
   - component: {fileID: 1798403968}
   - component: {fileID: 1798403971}
   - component: {fileID: 1798403970}
+  - component: {fileID: 1798403969}
   m_Layer: 0
   m_Name: Lugar de Engrenagem3
   m_TagString: GearPlace
@@ -2501,6 +2548,19 @@ Transform:
   m_Father: {fileID: 504749739}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1798403969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798403967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0343eb9486894049b449389cda57b11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasGear: 0
 --- !u!58 &1798403970
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2659,6 +2719,7 @@ GameObject:
   - component: {fileID: 1880364550}
   - component: {fileID: 1880364553}
   - component: {fileID: 1880364552}
+  - component: {fileID: 1880364551}
   m_Layer: 0
   m_Name: Lugar de Engrenagem4
   m_TagString: GearPlace
@@ -2680,6 +2741,19 @@ Transform:
   m_Father: {fileID: 504749739}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1880364551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880364549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0343eb9486894049b449389cda57b11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasGear: 0
 --- !u!58 &1880364552
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2846,6 +2920,7 @@ MonoBehaviour:
   isTriggered: 0
   _isDragging: 0
   _triggerPosition: {x: 0, y: 0}
+  _gearPlace: {fileID: 0}
 --- !u!61 &1937362757
 BoxCollider2D:
   m_ObjectHideFlags: 0
