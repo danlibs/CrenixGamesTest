@@ -1,77 +1,49 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class DragAndDrop : MonoBehaviour
+//Implementação das interfaces que permitem a mecânica de arrastar (drag):
+public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
-    public bool isTriggered;
-
+    public GearPlace gearPlace; //Identifica em qual local a engrenagem sendo movida foi colocada.
     [SerializeField]
-    private bool _isDragging;
-    [SerializeField]
-    private Vector2 _triggerPosition;
-    [SerializeField]
-    private GearPlace _gearPlace;
+    private Canvas _canvas; 
 
-    private void Update()
+    private RectTransform _rectTransform;
+    private CanvasGroup _canvasGroup; 
+
+    private void Awake()
     {
-        if (_isDragging)
+        _rectTransform = GetComponent<RectTransform>();
+        _canvasGroup = GetComponent<CanvasGroup>();
+    }
+
+    public void OnBeginDrag(PointerEventData eventData) // Ações a serem feitas ao iniciar o "arrastamento" do objeto.
+    {
+        _canvasGroup.blocksRaycasts = false; // Retira o bloqueio do raycast quando estamos arrastando o objeto. Isso permite que outro evento ocorra abaixo do objeto. No caso, permite que o método OnDrop(), na classe GearPlace, traga o objeto para o mesmo ponto de ancoramento do local de engrenagem.
+        if (gearPlace != null) // Ações feitas caso a engrenagem esteja posicionada em um local de engrenagem.
         {
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-            transform.Translate(mousePosition);
-            if (_gearPlace != null)
-            {
-                _gearPlace.hasGear = false;
-            }
-        }
-        else
-        {
-            if (isTriggered)
-            {
-                transform.position = _triggerPosition;
-                _gearPlace.hasGear = true;
-            }
-        }
-
+            // Ao clicarmos na engrenagem posicionada, o local de engrenagem entende que não há mais engrenagem ali e remove qualquer associação entre a engrenagem arrastada e o local de engrenagem:
+            gearPlace.hasGear = false; 
+            gearPlace.gear = null;
+            gearPlace = null;
+        };
     }
 
-    private void OnMouseDown()
+    void IDragHandler.OnDrag(PointerEventData eventData) // Ações a serem feitas quando o objeto é arrastado.
     {
-        _isDragging = true;
+        _rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor; // Faz a engrenagem seguir o cursor.
     }
 
-    private void OnMouseUp()
+    public void OnEndDrag(PointerEventData eventData) // Ações a serem feitas quando o objeto terminar de ser arrastado.
     {
-        _isDragging = false;
+        _canvasGroup.blocksRaycasts = true; // Ao soltarmos a engrenagem, ela volta a bloquear raycasts, permitindo ser selecionada novamente.
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnPointerDown(PointerEventData eventData) // Ações a serem feitas ao clicar no objeto.
     {
-        _gearPlace = collision.GetComponent<GearPlace>();
-        if (collision.gameObject.CompareTag("GearPlace") && !_gearPlace.hasGear)
-        {
-            isTriggered = true;
-            _triggerPosition = collision.transform.position;
-        }      
-        
+
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        _gearPlace = collision.GetComponent<GearPlace>();
-        if (collision.gameObject.CompareTag("GearPlace"))
-        {
-            isTriggered = true;
-            _triggerPosition = collision.transform.position;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        _gearPlace = collision.GetComponent<GearPlace>();
-        if (collision.gameObject.CompareTag("GearPlace"))
-        {
-            isTriggered = false;
-        }
-    }
 }

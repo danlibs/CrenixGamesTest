@@ -1,30 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class GearPlace : MonoBehaviour
+public class GearPlace : MonoBehaviour, IDropHandler
 {
     public bool hasGear;
+    public DragAndDrop gear;
 
-    private CircleCollider2D collider;
-    private DragAndDrop _triggerCheck;
-
-    private void Awake()
+    public void OnDrop(PointerEventData eventData) // Açõs a serem feitas quando soltamos (drop) um objeto arrastado.
     {
-        collider = GetComponent<CircleCollider2D>();
-    }
-
-    private void Update()
-    {
-        if (hasGear)
+        if (eventData.pointerDrag != null) // Se houver algo sendo solto:
         {
-            collider.isTrigger = false;
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition; // A engrenagem solta vai para a mesma posição de ancoramento que este objeto.
+            hasGear = true; // Sinaliza que há uma engrenagem aqui.
+            gear = eventData.pointerDrag.GetComponent<DragAndDrop>(); // Indica qual a engrenagem que está aqui.
+            gear.gearPlace = GetComponent<GearPlace>(); // Indica para a engrenagem em qual local de engranagem ela está.
         }
-        else
-        {
-            collider.isTrigger = true;
-        }
+        
     }
-
-
 }
