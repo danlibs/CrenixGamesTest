@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class GearPlace : MonoBehaviour, IDropHandler
 {
@@ -16,6 +17,8 @@ public class GearPlace : MonoBehaviour, IDropHandler
             hasGear = true; // Sinaliza que há uma engrenagem aqui.
             gear = eventData.pointerDrag.GetComponent<DragAndDrop>(); // Indica qual a engrenagem que está aqui.
             gear.gearPlace = GetComponent<GearPlace>(); // Indica para a engrenagem em qual local de engranagem ela está.
+            gear.gameObject.GetComponent<Image>().sprite = gear.gearInPlace; // Muda o sprite da engrenagem.
+            gear.gameObject.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f); // Aumenta o tamanho do sprite da engrenagem.
         }
         
     }

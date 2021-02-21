@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // Implementação do botão reset:
 public class ResetButton : MonoBehaviour
@@ -26,9 +27,11 @@ public class ResetButton : MonoBehaviour
             item.gear = null;
         }
 
-        foreach (DragAndDrop item in _gearCheck) // Remove de todas as engrenagens a referência ao local de engrenagem em que estavam.
+        foreach (DragAndDrop item in _gearCheck) // Remove de todas as engrenagens a referência ao local de engrenagem em que estavam e muda seu sprite e seu tamanho para o inicial.
         {
             item.gearPlace = null;
+            item.gameObject.GetComponent<Image>().sprite = item.gearOutOfPlace;
+            item.transform.localScale = new Vector3(1, 1, 1);
         }
 
         foreach (Gear engrenagem in _gears) // Traz todas as engrenagens para sua posição de ancoramento inicial.

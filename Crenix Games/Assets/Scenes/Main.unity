@@ -318,6 +318,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gearPlace: {fileID: 0}
+  gearOutOfPlace: {fileID: 21300000, guid: 462b705457a2bd34fb90c5ce45f254a4, type: 3}
+  gearInPlace: {fileID: 21300000, guid: 1a936265344836044857f37abfa12c22, type: 3}
   _canvas: {fileID: 1037415047}
 --- !u!114 &98058617
 MonoBehaviour:
@@ -1277,6 +1279,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gearPlace: {fileID: 0}
+  gearOutOfPlace: {fileID: 21300000, guid: 462b705457a2bd34fb90c5ce45f254a4, type: 3}
+  gearInPlace: {fileID: 21300000, guid: 1a936265344836044857f37abfa12c22, type: 3}
   _canvas: {fileID: 1037415047}
 --- !u!114 &845093104
 MonoBehaviour:
@@ -2123,6 +2127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gearPlace: {fileID: 0}
+  gearOutOfPlace: {fileID: 21300000, guid: 462b705457a2bd34fb90c5ce45f254a4, type: 3}
+  gearInPlace: {fileID: 21300000, guid: 1a936265344836044857f37abfa12c22, type: 3}
   _canvas: {fileID: 1037415047}
 --- !u!114 &1240887340
 MonoBehaviour:
@@ -2241,7 +2247,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -421, y: -207}
+  m_AnchoredPosition: {x: -417, y: -207}
   m_SizeDelta: {x: 122.86063, y: 122.86063}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1245171830
@@ -2257,6 +2263,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gearPlace: {fileID: 0}
+  gearOutOfPlace: {fileID: 21300000, guid: 462b705457a2bd34fb90c5ce45f254a4, type: 3}
+  gearInPlace: {fileID: 21300000, guid: 1a936265344836044857f37abfa12c22, type: 3}
   _canvas: {fileID: 1037415047}
 --- !u!114 &1245171831
 MonoBehaviour:
@@ -2583,7 +2591,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333951113}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.8824502, y: 0.36366153, z: 353.39746}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2664,6 +2672,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gearPlace: {fileID: 0}
+  gearOutOfPlace: {fileID: 21300000, guid: 462b705457a2bd34fb90c5ce45f254a4, type: 3}
+  gearInPlace: {fileID: 21300000, guid: 1a936265344836044857f37abfa12c22, type: 3}
   _canvas: {fileID: 1037415047}
 --- !u!114 &1706232781
 MonoBehaviour:
